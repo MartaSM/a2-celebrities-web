@@ -15,23 +15,23 @@ export class CelebritiesService {
 
   constructor(private http: HttpClient) { }
 
-  getCelebrities(): Observable<Celebrity[]> {
-    // ...
-  }
+  // getCelebrities(): Observable<Celebrity[]> {
+  //   // ...
+  // }
 
-  getCelebrity(id: string): Observable<Celebrity> {
-    // ...
-  }
+  // getCelebrity(id: string): Observable<Celebrity> {
+  //   // ...
+  // }
 
   createCelebrity(celebrity: Celebrity): Observable<Celebrity> {
-    // ...
+    return this.http.post<Celebrity>(this.baseUrl, celebrity, this.httpOptions);
   }
 
-  updateCelebrity(celebrity: Celebrity): Observable<Celebrity> {
-    // ...
-  }
+  // updateCelebrity(celebrity: Celebrity): Observable<Celebrity> {
+  //   // ...
+  // }
 
-  deleteCelebrity(celebrity: Celebrity): Observable<void> {
-    // ...
-  }
+  // deleteCelebrity(celebrity: Celebrity): Observable<void> {
+  //   // ...
+  // }
 }

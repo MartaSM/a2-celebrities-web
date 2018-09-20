@@ -19,8 +19,14 @@ export class CelebritiesFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.celebrity = new Celebrity();
   }
 
   onSubmit() {
+    this.celebritiesService.createCelebrity(this.celebrity).subscribe(newCeleb => {
+      return newCeleb
+    }) 
+
   }
+
 }
