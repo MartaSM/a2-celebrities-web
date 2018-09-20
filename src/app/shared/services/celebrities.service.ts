@@ -15,9 +15,9 @@ export class CelebritiesService {
 
   constructor(private http: HttpClient) { }
 
-  // getCelebrities(): Observable<Celebrity[]> {
-  //   // ...
-  // }
+  getCelebrities(): Observable<Celebrity[]> {
+    return this.http.get<Celebrity[]>(this.baseUrl) 
+  }
 
   // getCelebrity(id: string): Observable<Celebrity> {
   //   // ...

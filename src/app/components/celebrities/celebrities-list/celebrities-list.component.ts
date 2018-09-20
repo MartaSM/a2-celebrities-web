@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./celebrities-list.component.css']
 })
 export class CelebritiesListComponent implements OnInit {
-  celebrities$: Observable<Celebrity[]>;
+  celebrities$: Celebrity[];
 
   constructor(
     private celebritiesService: CelebritiesService,
@@ -18,7 +18,9 @@ export class CelebritiesListComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.getCelebrities();
+    this.celebritiesService.getCelebrities().subscribe((celebrities: Celebrity[]) => {
+      this.celebrities$ = celebrities
+    });
   }
 
   onClickDelete(celebrity: Celebrity) {
